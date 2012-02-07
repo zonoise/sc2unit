@@ -17,7 +17,8 @@ $app->register(
       'db.options'            => 
         array(
           'driver'    => 'pdo_mysql',
-          'host'      => 'localhost',
+          'host'      =>  $db_config['host_name'],
+          'port'      =>  $db_config['port'],
           'dbname'    =>  $db_config['db_name'],
           'user'      =>  $db_config['uname'],
           'password'  =>  $db_config['password'],
