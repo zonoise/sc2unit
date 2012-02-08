@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . '/../config/database.php');
-
+echo (__DIR__ . '/../config/database.php');
 $create_table1 = "
 create table if not exists 
 units
