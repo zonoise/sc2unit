@@ -1,0 +1,2 @@
+php script/init_db.php
+php script/show_db.php

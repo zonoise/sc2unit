@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__.'/silex.phar'; 
-require_once __DIR__.'../config/database.php' ;#Database setting info $db_config
+#require_once __DIR__.'../config/database.php' ;#Database setting info $db_config
+require_once __DIR__.'/../config/database.php' ;
 $app = new Silex\Application(); 
 $app['debug'] = true;
 
