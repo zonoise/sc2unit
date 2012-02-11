@@ -30,6 +30,27 @@ class Unit {
     return $unit;
   }
 
+  static public function find_by_race($race){
+    $db=Db::pdo();
+    $stmt = $db->prepare('select * from units where race = ?');
+    $result = $stmt->execute(array($race));
+    $rows = $stmt->fetchAll();
+    return $rows;
+  }
+
+  static public function find_by_armor_type($attr){
+    $db=Db::pdo();
+    $stmt = $db->prepare('
+    SELECT units.* 
+    FROM  (units 
+    LEFT JOIN  armor_type_unit ON units.id = armor_type_unit.unit_id )  
+    LEFT JOIN armor_types ON  armor_type_unit.armor_type_id = armor_types.id WHERE  armor_types.name=?
+    ');
+    $result = $stmt->execute(array($attr));
+    $rows = $stmt->fetchAll();
+    return $rows;
+  }
+
   function set_values($values){
     $this->values=$values;
   }

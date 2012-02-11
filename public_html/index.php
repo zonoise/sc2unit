@@ -42,7 +42,7 @@ $app->get('/about', function() use($app) {
 
 #about page (static html )
 $app->get('/race/{race}', function($race) use($app) { 
-  $sql = "SELECT * FROM units WHERE race = ?";
+  $sql = Unit::find_by_race($race);
   $unit = $app['db']->fetchAll($sql);
   return var_dump($unit);
 }); 
@@ -52,17 +52,13 @@ $app->get('/unit/{id}', function ($id) use ($app) {
     return var_dump($unit);
 });
 
-$app->get('/armer/{armer_type}', function ($id) use ($app) {
-    $sql = "SELECT * FROM units WHERE id = ?";
-    $unit = $app['db']->fetchAssoc($sql, array((int) $id));
-    $unit = Unit::find($id)->values();
+$app->get('/armer/{armer_type}', function ($armer_type) use ($app) {
+    $units = Unit::find_by_armor_type($armer_type);
     return var_dump($unit);
 });
 
 $app->get('/all_unit', function() use ($app) {
     $sql = "SELECT * FROM units";
-    $unit = $app['db']->fetchAll($sql);
-    
     return print_r($unit);
 });
 
