@@ -1,7 +1,7 @@
 <?php
-$db_config = array('host_name'=>' DATABASE_HOSTNAME',
-                   'port'=>'DATABASE_PORT',
-                   'uname'=>'DATABASE_NAME',
-                   'password'=>'DATABASE_USERNAME',
-                   'db_name'=>'DATABASE_PASSWORD');
+$db_config = array('host_name'=>' DUMMY_DATABASE_HOSTNAME',
+                   'port'=>'DUMMY_DATABASE_PORT',
+                   'uname'=>'DUMMY_DATABASE_NAME',
+                   'password'=>'DUMMY_DATABASE_USERNAME',
+                   'db_name'=>'DUMMY_DATABASE_PASSWORD');
 ?>
