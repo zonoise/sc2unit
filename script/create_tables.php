@@ -88,10 +88,9 @@ abilities
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8";
 
 try {
-  $pdo = new PDO("mysql:host=".$db_config['host_name']."; dbname=".$db_config['db_name'],
-                 $db_config['uname'],
-                 $db_config['password']);
-
+  require_once(__DIR__ . '/../lib/db.php');
+  $pdo=Db::pdo();
+  
   $result = $pdo->query("create schema if not exists ". $db_config['db_name']);
   $result = $pdo->query("use ".$db_config['db_name']);
 

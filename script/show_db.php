@@ -1,11 +1,10 @@
 <?php
 require_once(__DIR__ . '/../config/database.php');
-
+require_once(__DIR__ . '/../lib/db.php');
 #databases
 #$pdo = new PDO("mysql:host=localhost; dbname=sc2unit","root", null);
-$pdo = new PDO("mysql:host=".$db_config['host_name']."; dbname=".$db_config['db_name'],
-                 $db_config['uname'],
-                 $db_config['password']);
+
+$pdo=Db::pdo();
 $sth = $pdo->prepare("show databases");
 $sth->execute();
 while($result = $sth->fetchColumn()){
@@ -38,5 +37,7 @@ function show_columns($table_name,$pdo){
 foreach($table_names as $table_name){
   show_columns($table_name,$pdo);
 }
+
+
 
 ?>

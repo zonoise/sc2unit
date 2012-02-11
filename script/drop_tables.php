@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__ . '/../config/database.php');
+require_once(__DIR__ . '/../lib/db.php');
 try {
   $pdo = new PDO("mysql:host=".$db_config['host_name']."; dbname=".$db_config['db_name'],
                  $db_config['uname'],
