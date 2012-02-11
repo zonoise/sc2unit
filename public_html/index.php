@@ -49,12 +49,12 @@ $app->get('/race/{race}', function($race) use($app) {
 
 $app->get('/unit/{id}', function ($id) use ($app) {
     $unit = Unit::find($id)->values();
-    return var_dump($unit);
+    return print_r($unit);
 });
 
 $app->get('/armer/{armer_type}', function ($armer_type) use ($app) {
     $units = Unit::find_by_armor_type($armer_type);
-    return var_dump($unit);
+    return print_r($unit);
 });
 
 $app->get('/all_unit', function() use ($app) {
