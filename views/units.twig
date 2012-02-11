@@ -22,12 +22,10 @@
     </thead>
     <tbody>
   {% for u in units %}
-    {% if u.id %}
+    {% if u.id > 0 %}
     <tr>
     <td> {{ u.id }} </td>
     <td> {{ u.name }} </td>
-    <td> {{ u.mineral }} </td>
-    <td> {{ u.image_url }} </td>
     <td> {{ u.mineral }} </td>
     <td> {{ u.gas  }} </td>
     <td> {{ u.supply }} </td>
