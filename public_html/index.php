@@ -53,7 +53,7 @@ $app->get('/unit/{id}', function ($id) use ($app) {
           array(
             'unit' => $unit,
             'armor_types'=>$armor_types ,
-            'debug' => print_r($armor_types) ));
+          ));
 });
 
 $app->get('/armor/{armor_type}', function ($armor_type) use ($app) {
@@ -61,10 +61,6 @@ $app->get('/armor/{armor_type}', function ($armor_type) use ($app) {
   return  $app['twig']->render('units.twig',array('units' => $units)); 
 });
 
-$app->get('/all_unit', function() use ($app) {
-    $sql = "SELECT * FROM units";
-    return print_r($unit);
-});
 
 $app->error(function (\Exception $e, $code) use ($app) {
   return 'We are sorry, but something went terribly wrong.'
