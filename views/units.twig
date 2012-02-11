@@ -2,6 +2,7 @@
 {% block content %}
   {{ parent() }}
   <table id="unit_table">
+    <thead>
     <tr>
       <th>id<th>
       <th>Name<th>
@@ -18,7 +19,10 @@
       <th>race<th>
       <th>image_url<th>
     <tr>
+    </thead>
+    <tbody>
   {% for u in units %}
+
     <tr>
     <td> {{ u.id }} </td>
     <td> {{ u.name }} </td>
@@ -41,6 +45,7 @@
   {% else %}
       No units have been found.
   {% endfor %}
+  </tbody>
   </table>
 <script>
 $(document).ready(function() { 
