@@ -1,25 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-{{ parent() }}
-{{unit.id}}
-{{unit.name}}
-{{unit.mineral}}
-{{unit.gas}}
-{{unit.supply}}
-{{unit.buildtime}}
-{{unit.life}}
-{{unit.sields}}
-{{unit.energy}}
-{{unit.armor}}
-{{unit.movement_speed}}
-{{unit.sight_range}}
-{{unit.race}}
-{{unit.image_url}}
+{{ parent() }} 
+{{unit.id}} <br>
+{{unit.name}} <br>
+{{unit.mineral}} <br>
+{{unit.gas}} <br>
+{{unit.supply}} <br>
+{{unit.buildtime}} <br>
+{{unit.life}} <br>
+{{unit.sields}} <br>
+{{unit.energy}} <br>
+{{unit.armor}} <br>
+{{unit.movement_speed}} <br>
+{{unit.sight_range}} <br>
+{{unit.race}} <br>
+{{unit.image_url}} <br>
 
 {% for armor_type in armor_types %}
-{{armor_type}}
+{{armor_type}} <br>
+
 {% else %}
 
 {% endfor %}
 
+{{debug}}
 {% endblock %}

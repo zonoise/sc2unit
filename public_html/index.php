@@ -48,7 +48,12 @@ $app->get('/race/{race}', function($race) use($app) {
 $app->get('/unit/{id}', function ($id) use ($app) {
   $unit = Unit::find($id);
   $armor_types =Unit::find_armor_type($id);
-  return  $app['twig']->render('unit.twig',array('unit' => $unit,'armor_types'=>$armor_types));
+  
+  return  $app['twig']->render('unit.twig',
+          array(
+            'unit' => $unit,
+            'armor_types'=>$armor_types ,
+            'debug' => print_r($armor_types) ));
 });
 
 $app->get('/armor/{armor_type}', function ($armor_type) use ($app) {
