@@ -31,7 +31,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(),array(
 );
 */
 $app->get('/', function() use($app) { 
-  return 'top'; 
+  return  $app['twig']->render('top.twig');
 }); 
 
 #about page (static html )
