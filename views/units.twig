@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+  {{ parent() }}
   {% for u in units %}
     {{ u.id }} 
     {{ u.name }} 
