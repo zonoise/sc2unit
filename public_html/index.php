@@ -13,7 +13,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(),array(
 ));
 
 //Redgister Doctorine 
-$app->register(
+/*$app->register(
   new Silex\Provider\DoctrineServiceProvider(), 
     array(
       'db.options'            => 
@@ -29,7 +29,7 @@ $app->register(
     'db.common.class_path'  => __DIR__.'/../vender/doctrine2-common/lib'
     )
 );
-
+*/
 $app->get('/', function() use($app) { 
   return 'top'; 
 }); 
@@ -48,8 +48,6 @@ $app->get('/race/{race}', function($race) use($app) {
 }); 
 
 $app->get('/unit/{id}', function ($id) use ($app) {
-    $sql = "SELECT * FROM units WHERE id = ?";
-    $unit = $app['db']->fetchAssoc($sql, array((int) $id));
     $unit = Unit::find($id)->values();
     return var_dump($unit);
 });
