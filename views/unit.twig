@@ -13,12 +13,11 @@ energy {{unit.energy}} <br>
 armor{{unit.armor}} <br>
 movement_speed{{unit.movement_speed}} <br>
 sight_range{{unit.sight_range}} <br>
-race{{unit.race}} <br>
+race {{unit.race}} <a href="/race/{{unit.race}}">{{unit.race}} </a><br>
 image_url{{unit.image_url}} <br>
 
 {% for armor_type in armor_types %}
-{{armor_type}} <br>
-
+<a href="/armor/{{armor_type}}">{{armor_type}} </a><br>
 {% else %}
 
 {% endfor %}
