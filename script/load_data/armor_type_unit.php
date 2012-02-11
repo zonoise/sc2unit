@@ -1,8 +1,8 @@
 <?php
 
-require_once(__DIR__ . '/../lib/armor_type_unit.php');
+require_once(__DIR__ . '/../../lib/armor_type_unit.php');
 try {
-$unit_csv = fopen( __DIR__ .'/../fixture/armor_type_unit.csv','r' ) or die(" ");
+$unit_csv = fopen( __DIR__ .'/../../fixture/armor_type_unit.csv','r' ) or die(" ");
 $lines = fgetcsv($unit_csv ); //first line is Label
 $id=0;
 while( ( $lines = fgetcsv($unit_csv ) ) !== FALSE ){
