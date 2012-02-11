@@ -1,6 +1,8 @@
 <?php
 require_once(__DIR__ . '/../config/database.php');
-echo (__DIR__ . '/../config/database.php');
+//
+// UNIT
+//
 $create_table1 = "
 create table if not exists 
 units
@@ -9,37 +11,47 @@ units
   name        text not null,
   mineral     int,
   gas         int,
-  hp          int,
-  sields      int,
-  armer       int,
   supply      int,
-  buildtime   int, 
+  buildtime   int,
+  life        int,
+  sields      int, 
   energy      int,
-  movement    int,
+  armor       int,
+  movement_speed    float,
   sight_range int,
+  race text,
   image_url   text,
   PRIMARY KEY (id)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8;";
 
+//
+//ARMOR TYPE
+//
 $create_table2 = "
 create table if not exists 
-armer_types
+armor_types
 (
   id            int not null auto_increment,
   name          text not null,
   PRIMARY KEY (id)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8;";
 
+//
+//AROMOR TYPE UNIT
+//
 $create_table3 = "
 create table if not exists 
-armertype_unit
+armor_type_unit
 (
   id            int not null,
   unit_id       int not null,
-  armortype_id  int not null,
+  armor_type_id  int not null,
   PRIMARY KEY (id)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8;";
 
+//
+//Atacks
+//
 $create_table4 = "
 create table if not exists 
 atacks
@@ -56,12 +68,15 @@ atacks
   air           float ,
   attack_range         float ,
   growth_per_upgrade   int not null,
-  bonus_armer_type_id  int not null,
+  bonus_armor_type_id  int not null,
   bonus_point   int not null,
   image_url     text,
   PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
+//
+//Abilities
+//
 $create_table5 = "
 create table if not exists 
 abilities

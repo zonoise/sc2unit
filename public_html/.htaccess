@@ -2,8 +2,8 @@
     Options -MultiViews
 
     RewriteEngine On
-    #RewriteBase /php/sc/public_html/
-    RewriteBase /
+    RewriteBase /php/sc2unit/public_html/
+    #RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [QSA,L]
 </IfModule>

@@ -2,6 +2,7 @@
 require_once __DIR__.'/silex.phar'; 
 #require_once __DIR__.'../config/database.php' ;#Database setting info $db_config
 require_once __DIR__.'/../config/database.php' ;
+require_once __DIR__.'/../lib/unit.php';
 $app = new Silex\Application(); 
 $app['debug'] = true;
 
@@ -29,7 +30,6 @@ $app->register(
     )
 );
 
-
 $app->get('/', function() use($app) { 
   return 'top'; 
 }); 
@@ -40,11 +40,32 @@ $app->get('/about', function() use($app) {
   return  $app['twig']->render('about.twig',array('name' => $name)); 
 }); 
 
-$app->get('/units/{id}', function ($id) use ($app) {
+#about page (static html )
+$app->get('/race/{race}', function($race) use($app) { 
+  $sql = "SELECT * FROM units WHERE race = ?";
+  $unit = $app['db']->fetchAll($sql);
+  return var_dump($unit);
+}); 
+
+$app->get('/unit/{id}', function ($id) use ($app) {
     $sql = "SELECT * FROM units WHERE id = ?";
     $unit = $app['db']->fetchAssoc($sql, array((int) $id));
-
+    $unit = Unit::find($id)->values();
     return var_dump($unit);
+});
+
+$app->get('/armer/{armer_type}', function ($id) use ($app) {
+    $sql = "SELECT * FROM units WHERE id = ?";
+    $unit = $app['db']->fetchAssoc($sql, array((int) $id));
+    $unit = Unit::find($id)->values();
+    return var_dump($unit);
+});
+
+$app->get('/all_unit', function() use ($app) {
+    $sql = "SELECT * FROM units";
+    $unit = $app['db']->fetchAll($sql);
+    
+    return print_r($unit);
 });
 
 $app->error(function (\Exception $e, $code) use ($app) {
