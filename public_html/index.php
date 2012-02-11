@@ -42,8 +42,8 @@ $app->get('/about', function() use($app) {
 
 #about page (static html )
 $app->get('/race/{race}', function($race) use($app) { 
-  $unit = Unit::find_by_race($race);
-  return var_dump($unit);
+  $units = Unit::find_by_race($race);
+  return  $app['twig']->render('units.twig',array('units' => $units));
 }); 
 
 $app->get('/unit/{id}', function ($id) use ($app) {
@@ -53,7 +53,7 @@ $app->get('/unit/{id}', function ($id) use ($app) {
 
 $app->get('/armer/{armer_type}', function ($armer_type) use ($app) {
     $units = Unit::find_by_armor_type($armer_type);
-    return print_r($units);
+    return  $app['twig']->render('units.twig',array('units' => $units)); 
 });
 
 $app->get('/all_unit', function() use ($app) {

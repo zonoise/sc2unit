@@ -1,0 +1,8 @@
+{% for u in units %}
+     {{ u.id }} 
+     {{ u.name }} 
+     {{ u.mineral }} 
+     <br>
+{% else %}
+    No units have been found.
+{% endfor %}
