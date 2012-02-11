@@ -14,6 +14,5 @@ try {
   }
   print_r($pdo->errorInfo());
 }catch(PDOException $e){
-  print_r($pdo->errorInfo());
   echo 'Connection failed: ' . $e->getMessage();
 }?>
