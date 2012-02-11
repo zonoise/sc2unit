@@ -11,7 +11,7 @@ $stmt = $db->prepare('insert into armor_types (id,name) values (?,?)');
 foreach($attr as $k => $v){
   print($v);
   $stmt->execute(array($k,$v));
-  print_r($sth->errorInfo());
+  print_r($stmt->errorInfo());
 }
 
 }catch(PDOException $e){
