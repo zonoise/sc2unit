@@ -9,6 +9,8 @@ $attr= array('Light','Armored','Biological','Mechanical',
 
 $stmt = $db->prepare('insert into armor_types (id,name) values (?,?)');
 foreach($attr as $k => $v){
+  
+  print($k);
   print($v);
   $stmt->execute(array($k,$v));
   print_r($stmt->errorInfo());
