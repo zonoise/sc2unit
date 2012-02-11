@@ -8,7 +8,7 @@ try {
   $result = $pdo->query("use ".$db_config['db_name']);
 
 
-  $tables= array("abilities", "armer_types" ,"armertype_unit","atacks","units");
+  $tables= array("abilities", "armor_types" ,"armor_type_unit","atacks","units");
   foreach($tables as $table_name){
     $result = $pdo->query("drop table ".$table_name);
   }
