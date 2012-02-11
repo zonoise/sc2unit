@@ -19,26 +19,27 @@
     <tr>
   {% for u in units %}
     <tr>
-    <td>{{ u.id }} </td>
-    <td>{{ u.name }} </td>
-    <td>{{ u.mineral }} </td>
-    <td>{{ u.image_url }} </td>
-    <td>{{ u.mineral }} </td>
-    <td>{{ u.gas  }} </td>
-    <td>{{ u.supply }} </td>
-    <td>{{ u.buildtime }} </td>
-    <td>{{ u.life  }} </td>
-    <td>{{ u.sields }} </td>
-    <td>{{ u.energy }} </td>
-    <td>{{ u.armor }} </td>
-    <td>{{ u.movement_speed}} </td>
-    <td>{{ u.sight_range }} </td>
-    <td>{{ u.race text}} </td>
-    <td>{{ u.image_url }} </td>
+    <td> {{ u.id }} </td>
+    <td> {{ u.name }} </td>
+    <td> {{ u.mineral }} </td>
+    <td> {{ u.image_url }} </td>
+    <td> {{ u.mineral }} </td>
+    <td> {{ u.gas  }} </td>
+    <td> {{ u.supply }} </td>
+    <td> {{ u.buildtime }} </td>
+    <td> {{ u.life  }} </td>
+    <td> {{ u.sields }} </td>
+    <td> {{ u.energy }} </td>
+    <td> {{ u.armor }} </td>
+    <td> {{ u.movement_speed }} </td>
+    <td> {{ u.sight_range }} </td>
+    <td> {{ u.race text}} </td>
+    <td> {{ u.image_url }} </td>
     <tr>
   
   {% else %}
       No units have been found.
   {% endfor %}
   </table>
+  {{ dump }}
 {% endblock %}
