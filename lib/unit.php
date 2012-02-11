@@ -53,7 +53,7 @@ class Unit {
     return $rows;
   }
 
-  static public function find_armor_type($id){
+  static public function armor_types($id){
     $db=Db::pdo();
     $stmt = $db->prepare('
     SELECT armor_types.name as armor_types
@@ -63,7 +63,11 @@ class Unit {
     WHERE units.id=?;    ');
     $result = $stmt->execute(array($id));
     $rows = $stmt->fetchAll();
-    return $rows;
+    $armor_types=array();
+    foreach($rows as $a){
+      array_push($armor_types,$a[0] );
+    }
+    return $armor_types;
   }
 
   function set_values($values){
