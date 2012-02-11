@@ -42,8 +42,7 @@ $app->get('/about', function() use($app) {
 
 #about page (static html )
 $app->get('/race/{race}', function($race) use($app) { 
-  $sql = Unit::find_by_race($race);
-  $unit = $app['db']->fetchAll($sql);
+  $unit = Unit::find_by_race($race);
   return var_dump($unit);
 }); 
 
@@ -54,7 +53,7 @@ $app->get('/unit/{id}', function ($id) use ($app) {
 
 $app->get('/armer/{armer_type}', function ($armer_type) use ($app) {
     $units = Unit::find_by_armor_type($armer_type);
-    return print_r($unit);
+    return print_r($units);
 });
 
 $app->get('/all_unit', function() use ($app) {
