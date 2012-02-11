@@ -26,7 +26,7 @@ $app->register(
           'password'  =>  $db_config['password'],
         ),
     'db.dbal.class_path'    => __DIR__.'/../vender/doctrine-dbal/lib',
-    'db.common.class_path'  => __DIR__.'/../vender/doctrine-dbal/lib/vendor/doctrine-common/lib'
+    'db.common.class_path'  => __DIR__.'/../vender/doctrine2-common/lib'
     )
 );
 
