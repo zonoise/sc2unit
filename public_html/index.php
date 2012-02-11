@@ -53,7 +53,7 @@ $app->get('/unit/{id}', function ($id) use ($app) {
 
 $app->get('/armor/{armor_type}', function ($armor_type) use ($app) {
     $units = Unit::find_by_armor_type($armor_type);
-    return  $app['twig']->render('units.twig',array('units' => $units,'dump'=>print_r($units))); 
+    return  $app['twig']->render('units.twig',array('units' => $units)); 
 });
 
 $app->get('/all_unit', function() use ($app) {
