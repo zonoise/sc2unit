@@ -25,9 +25,10 @@ class Unit {
     $stmt = $db->prepare('select * from units where name = ?');
     $result = $stmt->execute(array($name));
     $f = $stmt->fetch(PDO::FETCH_ASSOC);
-    $unit = new Unit();
-    $unit->set_values($f);
-    return $unit;
+    return $f;
+    #$unit = new Unit();
+    #$unit->set_values($f);
+    #return $unit;
   }
 
   static public function find_by_race($race){
@@ -44,9 +45,22 @@ class Unit {
     SELECT units.* 
     FROM  (units 
     LEFT JOIN  armor_type_unit ON units.id = armor_type_unit.unit_id )  
-    LEFT JOIN armor_types ON  armor_type_unit.armor_type_id = armor_types.id WHERE  armor_types.name=?
-    ');
+    LEFT JOIN armor_types ON  armor_type_unit.armor_type_id = armor_types.id 
+    WHERE  armor_types.name=?');
     $result = $stmt->execute(array($attr));
+    $rows = $stmt->fetchAll();
+    return $rows;
+  }
+
+  static public function find_armor_type($id){
+    $db=Db::pdo();
+    $stmt = $db->prepare('
+    SELECT armor_types.name as armor_types
+    FROM  units 
+    LEFT JOIN armor_type_unit ON units.id = armor_type_unit.unit_id 
+    LEFT JOIN armor_types     ON armor_type_unit.armor_type_id = armor_types.id
+    WHERE units.id=?;    ');
+    $result = $stmt->execute(array($id));
     $rows = $stmt->fetchAll();
     return $rows;
   }

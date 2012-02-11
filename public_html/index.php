@@ -40,20 +40,20 @@ $app->get('/about', function() use($app) {
   return  $app['twig']->render('about.twig',array('name' => $name)); 
 }); 
 
-#about page (static html )
 $app->get('/race/{race}', function($race) use($app) { 
   $units = Unit::find_by_race($race);
   return  $app['twig']->render('units.twig',array('units' => $units));
 }); 
 
 $app->get('/unit/{id}', function ($id) use ($app) {
-    $unit = Unit::find($id)->values();
-    return print_r($unit);
+  $unit = Unit::find($id);
+  $armor_types =Unit::find_armor_type($id);
+  return  $app['twig']->render('unit.twig',array('unit' => $unit,'armor_types'=>$armor_types));
 });
 
 $app->get('/armor/{armor_type}', function ($armor_type) use ($app) {
-    $units = Unit::find_by_armor_type($armor_type);
-    return  $app['twig']->render('units.twig',array('units' => $units)); 
+  $units = Unit::find_by_armor_type($armor_type);
+  return  $app['twig']->render('units.twig',array('units' => $units)); 
 });
 
 $app->get('/all_unit', function() use ($app) {

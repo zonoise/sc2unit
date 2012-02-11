@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{{ parent() }}
+
+{{unit.id}}
+{{unit.name}}
+{{unit.mineral}}
+{{unit.gas}}
+{{unit.supply}}
+{{unit.buildtime}}
+{{unit.life}}
+{{unit.sields}}
+{{unit.energy}}
+{{unit.armor}}
+{{unit.movement_speed}}
+{{unit.sight_range}}
+{{unit.race}}
+{{unit.image_url}}
+
+{% for armor_type in armor_types %}
+{{armor_type}}
+{% else %}
+
+{% endfor%}
