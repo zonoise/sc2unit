@@ -15,9 +15,10 @@ class Unit {
     //echo($stmt->errorInfo());
     $result = $stmt->execute(array($id));
     $f = $stmt->fetch(PDO::FETCH_ASSOC);
-    $unit = new Unit();
-    $unit->set_values($f);
-    return $unit;
+    return $f;
+    #$unit = new Unit();
+    #$unit->set_values($f);
+    #return $unit;
   }
 
   static public function find_by_name($name){
