@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
   {{ parent() }}
-  <table>
+  <table id="unit_table">
     <tr>
+      <th>id<th>
       <th>Name<th>
       <th>mineral<th>
       <th>gas<th>
@@ -41,4 +42,13 @@
       No units have been found.
   {% endfor %}
   </table>
+<script>
+$(document).ready(function() { 
+    // call the tablesorter plugin 
+    $("#unit_table").tablesorter({ 
+        // sort on the first column and third column, order asc 
+        sortList: [[0,0],[2,0]] 
+    }); 
+}); 
+</script>
 {% endblock %}
