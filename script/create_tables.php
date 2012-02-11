@@ -7,7 +7,7 @@ $create_table1 = "
 create table if not exists 
 units
 (
-  id          int not null auto_increment,
+  id          int not null,
   name        text not null,
   mineral     int,
   gas         int,
@@ -31,7 +31,7 @@ $create_table2 = "
 create table if not exists 
 armor_types
 (
-  id            int not null auto_increment,
+  id            int not null ,
   name          text not null,
   PRIMARY KEY (id)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8;";
