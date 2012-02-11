@@ -1,9 +1,14 @@
-{% for u in units %}
-     {{ u.id }} 
-     {{ u.name }} 
-     {{ u.mineral }}
-     {{ u.image_url }}  
-     <br>
-{% else %}
-    No units have been found.
-{% endfor %}
+{% block content %}
+
+{% extends "layout.twig" %}
+  {% for u in units %}
+    {{ u.id }} 
+    {{ u.name }} 
+    {{ u.mineral }}
+    {{ u.image_url }}  
+    <br>
+  {% else %}
+      No units have been found.
+  {% endfor %}
+
+{% endblock %}
