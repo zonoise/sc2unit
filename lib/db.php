@@ -9,7 +9,8 @@ class Db {
   }
 
   static public function pdo(){
-    global $db_config;
+    try{
+      global $db_config;
       $pdo = new PDO("mysql:host=".$db_config['host_name']."; dbname=".$db_config['db_name'],
                    $db_config['uname'],
                    $db_config['password']);
@@ -18,7 +19,7 @@ class Db {
       $pdo->query("use ".$db_config['db_name']);
       return $pdo;
     }catch(PDOException $e){
-      echo 'Connection failed: ' . $e->getMessage();
+       echo 'Connection failed: ' . $e->getMessage();
       return null;
     }
   }
