@@ -22,7 +22,7 @@
     </thead>
     <tbody>
   {% for u in units %}
-
+    {% if u.id %}
     <tr>
     <td> {{ u.id }} </td>
     <td> {{ u.name }} </td>
@@ -41,7 +41,7 @@
     <td> {{ u.race }} </td>
     <td> {{ u.image_url }} </td>
     <tr>
-  
+    {% endif %}
   {% else %}
       No units have been found.
   {% endfor %}
