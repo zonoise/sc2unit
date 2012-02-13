@@ -1,21 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-  {{ parent() }}
+  {{ parent() }} 
+
+
+
+<div id="modal" >
+</div>
+
+
   <table id="unit_table" class="tablesorter">
     <thead>
     <tr>
-      <th>id</th>
+      <th style="display:none;">id</th>
       <th>Name</th>
       <th>mineral</th>
       <th>gas</th>
       <th>supply</th>
-      <th>buildtime</th>
+      <th>build</th>
       <th>life</th>
       <th>sields </th>
       <th>energy</th>
       <th>armor</th>
-      <th>movement_speed</th>
-      <th>sight_range</th>
+      <th>speed</th>
+      <th>sight</th>
       <th>race</th>
       <th>image_url</th>
     <tr>
@@ -24,8 +31,8 @@
   {% for u in units %}
     {% if u.id > 0 %}
     <tr>
-    <td><a href="../unit/{{u.id}}">{{ u.id }}</a></td>
-    <td>{{ u.name }}</td>
+    <td style="display:none;"><a href="{{app['root']}}/unit/{{u.id}}">{{ u.id }}</a></td>
+    <td class="unit_name" data-url="{{app['root']}}/unit/{{u.id}}">{{ u.name }}</td>
     <td>{{ u.mineral }}</td>
     <td>{{ u.gas  }}</td>
     <td>{{ u.supply }}</td>
@@ -45,11 +52,4 @@
   {% endfor %}
   </tbody>
   </table>
-<script>
-$(document).ready(function() { 
-    // call the tablesorter plugin 
-    $("#unit_table").tablesorter({ 
-    }); 
-});
-</script>
 {% endblock %}

@@ -1,0 +1,80 @@
+@import 'mixins';
+@import 'variables';
+body{
+  #gradient.vertical(white, @blueDark);
+}
+
+#content{
+  padding :0 10px;
+  margin: 0 auto;
+}
+
+table.tablesorter{
+  font-size:16px;
+  .header{
+    font-size:16px;
+  }
+}
+
+#unit_table{
+  table{
+    border-collapse:collapse;
+    tbody{
+      background-color:white;
+    }
+    td{
+      padding:0.2em 1em;
+      border:1px solid gray;
+      border-color:black;
+    }
+  }
+}
+
+.unit{
+  padding:10px;
+  margin: 0 auto;
+  background-color:white;
+  width:300px;
+  table{
+    border-collapse:collapse;
+    td{
+      padding:0.2em 1em;
+      border:1px solid gray;
+      border-color:black;
+    }
+  }
+}
+
+#modal{
+
+}
+
+.show{
+  position:fixed;
+  padding:50px 0 0 0;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:block;
+  #translucent.background(black,0.5);
+}
+#modal_outer{
+   position:relative;
+   height:1px;
+}
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-table;
+    min-height: 1%;
+}
+
+

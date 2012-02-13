@@ -1,12 +1,13 @@
 <?php
 require_once(__DIR__ . '/../lib/lessc.inc.php');
 
-$input = 'style.less';
+$input = __DIR__ .'/../public_html/css/style.less';
+$output = __DIR__ .'/../public_html/css/style.css';
 
 $lc = new lessc($input);
 
 try {
-    file_put_contents('style.css', $lc->parse());
+    file_put_contents($output, $lc->parse());
 } catch (exception $ex) {
     exit($ex->getMessage());
 }

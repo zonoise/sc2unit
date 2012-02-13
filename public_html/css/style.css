@@ -1,5 +1,53 @@
-.tablesorter {
-  border:"0";
-  cellpadding:"0";
-  cellspacing:"1";
+body {
+  background-color:#9d261d;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
+#content {
+  padding:0 10px;
+  margin:0 auto;
+}
+table.tablesorter { font-size:16px; }
+table.tablesorter .header { font-size:16px; }
+#unit_table table { border-collapse:collapse; }
+#unit_table table tbody { background-color:white; }
+#unit_table table td {
+  padding:0.2em 1em;
+  border:1px solid gray;
+  border-color:black;
+}
+.unit {
+  padding:10px;
+  margin:0 auto;
+  background-color:white;
+  width:300px;
+}
+.unit table { border-collapse:collapse; }
+.unit table td {
+  padding:0.2em 1em;
+  border:1px solid gray;
+  border-color:black;
+}
+#modal { display:none; }
+#modal .show {
+  background-color:blue;
+  width:500px;
+  height:500px;
+  display:block;
+}
+#modal_outer {
+  position:relative;
+  height:1px;
+}
+.clearfix:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.clearfix {
+  display:inline-table;
+  min-height:1%;
 }

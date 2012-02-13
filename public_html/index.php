@@ -4,7 +4,7 @@ require_once __DIR__.'/silex.phar';
 require_once __DIR__.'/../lib/setup-activerecord.php';
 $app = new Silex\Application(); 
 $app['debug'] = true;
-$app['doc_root']=$_SERVER['DOCUMENT_ROOT'];
+$app['root']=dirname($_SERVER['PHP_SELF']);
 //Register Twig Extension
 $app->register(new Silex\Provider\TwigServiceProvider(),array(
   'twig.path'           => __DIR__.'/../views' ,
@@ -13,6 +13,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(),array(
 
 $app->get('/', function() use($app) { 
   return  $app['twig']->render('top.twig');
+  #return $app['doc_root'];
 }); 
 
 #about page (static html )
