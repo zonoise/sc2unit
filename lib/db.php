@@ -14,8 +14,8 @@ class Db {
       $pdo = new PDO("mysql:host=".$db_config['host_name'].';port='.$db_config['port'] . "; dbname=".$db_config['db_name'],
                    $db_config['uname'],
                    $db_config['password']);
-      print_r("mysql:host=".$db_config['host_name'].';port='.$db_config['port'] . "; dbname=".$db_config['db_name'],
-                   $db_config['uname'],
+      print_r("mysql:host=".$db_config['host_name'].';port='.$db_config['port'] . "; dbname=".$db_config['db_name']
+                   . $db_config['uname'].
                    $db_config['password']);
       //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
