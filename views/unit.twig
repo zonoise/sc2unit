@@ -17,7 +17,7 @@ race {{unit.race}} <a href="/race/{{unit.race}}">{{unit.race}} </a><br>
 image_url{{unit.image_url}} <br>
 
 {% for armor_type in armor_types %}
-<a href="/armor/{{armor_type}}">{{armor_type}} </a><br>
+<a href="../armor/{{armor_type.name}}"> {{armor_type.name}} </a><br>
 {% else %}
 
 {% endfor %}

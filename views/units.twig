@@ -24,7 +24,7 @@
   {% for u in units %}
     {% if u.id > 0 %}
     <tr>
-    <td><a href="/unit/{{u.id}}">{{ u.id }}</a></td>
+    <td><a href="../unit/{{u.id}}">{{ u.id }}</a></td>
     <td>{{ u.name }}</td>
     <td>{{ u.mineral }}</td>
     <td>{{ u.gas  }}</td>
@@ -49,8 +49,6 @@
 $(document).ready(function() { 
     // call the tablesorter plugin 
     $("#unit_table").tablesorter({ 
-        // sort on the first column and third column, order asc 
-        //sortList: [[0,0],[2,0]] 
     }); 
 });
 </script>
