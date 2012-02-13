@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+{{ parent() }} 
+id   {{unit.id}} <br>
+name {{unit.name}} <br>
+mineral {{unit.mineral}} <br>
+gas {{unit.gas}} <br>
+supply {{unit.supply}} <br>
+buildtime {{unit.buildtime}} <br>
+life {{unit.life}} <br>
+sields {{unit.sields}} <br>
+energy {{unit.energy}} <br>
+armor{{unit.armor}} <br>
+movement_speed{{unit.movement_speed}} <br>
+sight_range{{unit.sight_range}} <br>
+race {{unit.race}} <a href="/race/{{unit.race}}">{{unit.race}} </a><br>
+image_url{{unit.image_url}} <br>
+
+{% for armor_type in armor_types %}
+<a href="../armor/{{armor_type.name}}"> {{armor_type.name}} </a><br>
+{% else %}
+
+{% endfor %}
+
+{% endblock %}
