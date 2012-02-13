@@ -16,7 +16,7 @@ while( ( $lines = fgetcsv($unit_csv ) ) !== FALSE ){
       create_armor_type_unit(array(
                 'id'=>$id ,
                 'unit_id' => $unit_id,
-                'armor_type_id' =>$k 
+                'armortype_id' =>$k 
       ));
       $id++;
     }

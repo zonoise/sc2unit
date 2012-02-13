@@ -61,7 +61,6 @@ $app->get('/armor/{armor_type}', function ($armor_type) use ($app) {
   return  $app['twig']->render('units.twig',array('units' => $units)); 
 });
 
-
 $app->error(function (\Exception $e, $code) use ($app) {
   return 'We are sorry, but something went terribly wrong.'
   . $code .'<pre>'.$e . '</pre>';

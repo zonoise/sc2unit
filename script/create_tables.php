@@ -45,7 +45,7 @@ armor_type_unit
 (
   id            int not null,
   unit_id       int not null,
-  armor_type_id  int not null,
+  armortype_id  int not null,
   PRIMARY KEY (id)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8;";
 
@@ -90,9 +90,7 @@ abilities
 try {
   require_once(__DIR__ . '/../lib/db.php');
   $pdo=Db::pdo();
-  
-  $result = $pdo->query("create schema if not exists ". $db_config['db_name']);
-  $result = $pdo->query("use ".$db_config['db_name']);
+
 
   $result = $pdo->query($create_table1);
   $result = $pdo->query($create_table2);

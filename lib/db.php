@@ -16,7 +16,7 @@ class Db {
                    $db_config['password']);
       //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $pdo->query("use ".$db_config['db_name']);
+      //$pdo->query("use ".$db_config['db_name']);
       return $pdo;
     }catch(PDOException $e){
        echo 'Connection failed: ' . $e->getMessage();
