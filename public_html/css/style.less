@@ -1,7 +1,11 @@
 @import 'mixins';
 @import 'variables';
+@import 'reset';
+@import url(http://fonts.googleapis.com/css?family=Chango);
 body{
-  #gradient.vertical(white, @blueDark);
+  margin:0;
+  padding:0;
+  background-color:@grayDark;
 }
 
 #content{
@@ -16,19 +20,59 @@ table.tablesorter{
   }
 }
 
+#header{
+  margin :0;
+  h1{
+    margin:10px;
+    font-family: 'Chango', cursive;
+    color:@white;
+  }
+  
+}
+#menu{
+  .gradientBar(@blue, @blueDark);
+  margin:0 10px 20px;
+  padding:0 20px 10px;
+  
+  border: 1px solid gray;
+  a {
+    padding:0 10px 0 0 ;
+    &:hover{color:black;text-shadow:0 0 5px white;}
+    &:link{color:black;}
+    &:visited{color:black;}
+    &:active{color:black;}
+  }
+  h2{
+    font-size:20px;
+    margin:5px 0;
+    padding:10px 0 0;
+  }
+}
+
 #unit_table{
+  .unit_name{
+  &:hover{
+      background-color:@blue;
+      cursor:pointer;
+    }
+  }
+
   table{
     border-collapse:collapse;
     tbody{
       background-color:white;
+      td{
+        padding:0.2em 1em;
+        border:1px solid gray;
+        border-color:black;
+      }
     }
-    td{
-      padding:0.2em 1em;
-      border:1px solid gray;
-      border-color:black;
-    }
+
   }
+
 }
+
+
 
 .unit{
   padding:10px;
@@ -45,10 +89,6 @@ table.tablesorter{
   }
 }
 
-#modal{
-
-}
-
 .show{
   position:fixed;
   padding:50px 0 0 0;
@@ -59,22 +99,9 @@ table.tablesorter{
   display:block;
   #translucent.background(black,0.5);
 }
+
 #modal_outer{
-   position:relative;
-   height:1px;
+  position:relative;
+  height:1px;
 }
-
-.clearfix:after {
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both; 
-    visibility: hidden;
-}
-
-.clearfix {
-    display: inline-table;
-    min-height: 1%;
-}
-
 
