@@ -2,6 +2,7 @@
 table.tablesorter {
 	font-family:arial;
 	background-color: #CDCDCD;
+  border-collapse : collapse ;
 	/*margin:10px 0pt 15px;
 	font-size: 8pt; */
 	width: 100%;
@@ -9,12 +10,14 @@ table.tablesorter {
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	background-color: #e6EEEE;
-	 /*border: 1px solid #FFF;
-	font-size: 30pt;
-	padding:0 1em 0 1em;*/
+	border:1px solid gray;
+
+	
 }
 table.tablesorter thead tr .header {
-	/*background-image: url(bg.gif); */
+	background-image: url(bg.gif); 
+  font-size:20px;
+  padding:0.2em 1em ;
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;

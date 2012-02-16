@@ -2,29 +2,25 @@
 {% block content %}
   {{ parent() }} 
 
-
-
 <div id="modal" >
 </div>
-
-
   <table id="unit_table" class="tablesorter">
     <thead>
     <tr>
       <th style="display:none;">id</th>
       <th>Name</th>
-      <th>mineral</th>
-      <th>gas</th>
-      <th>supply</th>
-      <th>build</th>
-      <th>life</th>
-      <th>sields </th>
-      <th>energy</th>
-      <th>armor</th>
-      <th>speed</th>
-      <th>sight</th>
-      <th>race</th>
-      <th>image_url</th>
+      <th>Mineral</th>
+      <th>Gas</th>
+      <th>Supply</th>
+      <th>Build</th>
+      <th>Life</th>
+      <th>Sields </th>
+      <th>Energy</th>
+      <th>Armor</th>
+      <th>Speed</th>
+      <th>Sight</th>
+      <th>Race</th>
+      <!--<th>image_url</th>-->
     <tr>
     </thead>
     <tbody>
@@ -44,7 +40,7 @@
     <td>{{ u.movement_speed }}</td>
     <td>{{ u.sight_range }}</td>
     <td>{{ u.race }} </td>
-    <td>{{ u.image_url }}</td>
+    <!--<td>{{ u.image_url }}</td>-->
     </tr>
     {% endif %}
   {% else %}

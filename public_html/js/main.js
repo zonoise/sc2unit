@@ -3,8 +3,8 @@ $(document).ready(function() {
   // call the tablesorter plugin 
   $("#unit_table").tablesorter({ 
   }); 
-  
-  console.log("hage");
+
+
   $('.unit_name').click(function(){
     var url = $(this)[0].dataset.url;
     
@@ -13,8 +13,6 @@ $(document).ready(function() {
       $('#modal').html(data);
       $('#modal').addClass("show");
       $('#modal').show();
-      //$('#modal').draggable();
-      //$('#modal').css('position','absolute');
       
       },'html');
   });
