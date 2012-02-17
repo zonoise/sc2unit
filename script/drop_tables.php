@@ -6,7 +6,7 @@ try {
   
   $tables= array("abilities", "armor_types" ,"armor_type_unit","atacks","units");
   foreach($tables as $table_name){
-    $result = $pdo->query("drop table ".$table_name);
+    $result = $pdo->query("drop table if exists ".$table_name);
   }
   
   //[0]sqlstate error code [1] [2] 
