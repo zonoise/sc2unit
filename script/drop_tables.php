@@ -8,7 +8,13 @@ try {
   foreach($tables as $table_name){
     $result = $pdo->query("drop table ".$table_name);
   }
-  print_r($pdo->errorInfo());
+  
+  //[0]sqlstate error code [1] [2] 
+  $errorInfo = $pdo->errorInfo();
+  if($errorInfo[1]){
+    print_r($errorInfo);
+  }
+
 }catch(PDOException $e){
   echo 'Connection failed: ' . $e->getMessage();
 }?>

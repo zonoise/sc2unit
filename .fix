@@ -1,0 +1,13 @@
+[replace]
+config/database.php  DUMMY_DB_HOSTNAME  DB_HOST
+config/database.php  DUMMY_DB_PORT      '3306'
+config/database.php  DUMMY_DB_NAME      PROJECT_NAME 
+config/database.php  DUMMY_DB_USERNAME  DB_USER   
+config/database.php  DUMMY_DB_PASSWORD  DB_PASSWORD
+
+[deploy]
+php script/drop_tables.php
+php script/create_tables.php
+php script/load_data/units.php
+php script/load_data/armor_types.php
+php script/load_data/armor_type_unit.php

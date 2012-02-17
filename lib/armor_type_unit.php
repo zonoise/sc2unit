@@ -31,7 +31,6 @@ class ArmorTypeUnit {
 }
 
 function create_armor_type_unit($values){
-  print_r($values);
   $result = ArmorTypeUnit::insert($values);
   print_r($result);
 }

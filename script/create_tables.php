@@ -97,7 +97,12 @@ try {
   $result = $pdo->query($create_table3);
   $result = $pdo->query($create_table4);
   $result = $pdo->query($create_table5);
-  print_r($pdo->errorInfo());
+
+    //[0]sqlstate error code [1] [2] 
+  $errorInfo = $pdo->errorInfo();
+  if($errorInfo[1]){
+    print_r($errorInfo);
+  }
 }catch(PDOException $e){
   print_r($pdo->errorInfo());
   echo 'Connection failed: ' . $e->getMessage();

@@ -13,7 +13,10 @@ foreach($attr as $k => $v){
   print($k);
   print($v);
   $stmt->execute(array($k,$v));
-  print_r($stmt->errorInfo());
+  $errorInfo = $stmt->errorInfo();
+  if($errorInfo[1]){
+    print_r($errorInfo);
+  }
 }
 
 }catch(PDOException $e){
